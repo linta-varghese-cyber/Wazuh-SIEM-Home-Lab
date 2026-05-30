@@ -20,3 +20,5 @@ This project demonstrates the architecture and deployment of an enterprise-grade
 * Endpoint Telemetry Analytics
 * Log Parsing & Event Investigation
 * Windows Security Event ID Interpretation
+## 🖥️ Live Security Monitoring Dashboard
+![Wazuh Enterprise Dashboard](wazuh-dashboard.png)
