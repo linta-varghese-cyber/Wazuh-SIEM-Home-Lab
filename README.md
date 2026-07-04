@@ -88,32 +88,77 @@ Used the Wazuh Threat Hunting module to:
 
 This lab provides practical experience with enterprise SIEM technologies and security monitoring workflows, helping develop skills relevant to SOC Analyst, Cyber Security Analyst, and Blue Team roles.
 
-## Lab Build Process
 
-### Phase 1 – Virtual Machine Creation
+## 📸 Lab Build Process
 
-![VM Created](screenshots/01-vm-created.png)
-
----
-
-### Phase 2 – Troubleshooting Hyper-V Conflict
-
-![Black Screen](screenshots/10-black-screen-issue.png)
-
-![Disable Hyper-V](screenshots/20-disable-hypervisorlaunchtype.png)
+The screenshots below highlight the major milestones of building the Wazuh SIEM Home Lab. The complete build log (36 screenshots) is available in the `/screenshots` folder.
 
 ---
 
-### Phase 3 – Windows Target Machine Installation
+### 1. Lab Architecture
 
-![Windows Setup](screenshots/28-windows-installation-started.png)
+Designed the lab environment in Oracle VirtualBox with separate Ubuntu (Wazuh Server) and Windows 11 Target virtual machines.
 
-![Windows Desktop](screenshots/32-windows-desktop-ready.png)
+![Lab Architecture](screenshots/01-lab-architecture.png)
 
 ---
 
-### Phase 4 – Wazuh SIEM Deployment
+### 2. Ubuntu Server Deployment
+
+Successfully installed Ubuntu Server which hosts the Wazuh Manager, Indexer and Dashboard.
+
+![Ubuntu Server Installed](screenshots/02-ubuntu-server-installed.png)
+
+---
+
+### 3. Hyper-V Troubleshooting
+
+Diagnosed a VirtualBox boot failure caused by Hyper-V and Virtualization-Based Security (VBS). Used BCDEdit and Windows security settings to disable the Microsoft hypervisor and restore hardware virtualization.
+
+![Disable Hypervisor](screenshots/22-disable-hypervisor-launchtype.png)
+
+---
+
+### 4. Windows Target Machine Installation
+
+Installed Windows 11 Enterprise Evaluation after increasing the virtual disk size from 50 GB to 80 GB.
+
+![Windows Installation](screenshots/29-windows-11-installation-progress.png)
+
+---
+
+### 5. Windows Target Ready
+
+Completed Windows setup and prepared the endpoint for Wazuh agent deployment.
+
+![Windows Desktop](screenshots/32-windows-11-target-vm-ready.png)
+
+---
+
+### 6. Wazuh Server Installation
+
+Completed the Wazuh Server installation on Ubuntu.
+
+![Wazuh Server Installation](screenshots/33-wazuh-server-installation.png)
+
+---
+
+### 7. Wazuh Web Login
+
+Successfully accessed the Wazuh Dashboard through the web interface.
 
 ![Wazuh Login](screenshots/35-wazuh-web-login.png)
 
+---
+
+### 8. Wazuh Dashboard
+
+Validated the deployment by accessing the Wazuh Dashboard and confirming the platform was operational.
+
 ![Dashboard](screenshots/36-wazuh-dashboard-overview.png)
+
+---
+
+## 📂 Complete Build Log
+
+The full build process, including all **36 screenshots**, can be viewed in the [`screenshots`](screenshots/) folder.
