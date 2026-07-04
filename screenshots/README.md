@@ -1,1 +1,1 @@
-
+wazuh-dashboard.png
