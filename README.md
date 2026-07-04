@@ -1,164 +1,272 @@
-# Wazuh SIEM Home Lab
+# 🛡️ Wazuh SIEM Home Lab
 
-## Overview
-
-This project documents the deployment of a Wazuh SIEM environment built inside Oracle VirtualBox for hands-on cyber security monitoring, threat hunting, and security event analysis.
-
-The objective of the lab is to gain practical experience with SIEM deployment, endpoint monitoring, log analysis, and security event investigation similar to activities performed by SOC and Cyber Security Analysts.
-
-## Architecture & Tools Used
-
-* Hypervisor: Oracle VirtualBox
-* SIEM Platform: Wazuh 4.14.5
-* Wazuh Manager: Ubuntu Server 22.04 LTS
-* Wazuh Dashboard
-* Wazuh Indexer
-* Monitored Endpoint: Ubuntu 22.04 Agent
-* Network: Isolated VirtualBox Lab Environment
-
-## Phase 1 – Wazuh Deployment
-
-### Infrastructure Setup
-
-* Deployed Ubuntu Server 22.04 LTS
-* Installed Wazuh Manager
-* Installed Wazuh Indexer
-* Installed Wazuh Dashboard
-* Verified dashboard access through the web interface
-
-### Agent Deployment
-
-* Installed Wazuh Agent on Ubuntu endpoint
-* Registered the endpoint with the Wazuh Manager
-* Verified successful communication between agent and manager
-* Confirmed active agent status in the Wazuh Dashboard
-
-### Security Monitoring Validation
-
-Generated and detected the following security events:
-
-* New user creation
-* New group creation
-* Successful sudo execution
-* PAM authentication activity
-* CIS Security Configuration Assessment scans
-
-### Threat Hunting
-
-Used the Wazuh Threat Hunting module to:
-
-* Search events by agent
-* Investigate Rule IDs
-* Review authentication activity
-* Analyse security events generated within the lab
-
-## Skills Demonstrated
-
-* SIEM Deployment and Administration
-* Wazuh Agent Management
-* Linux Security Monitoring
-* Log Collection and Analysis
-* Threat Hunting
-* Security Event Investigation
-* Security Configuration Assessment
-
-## Current Status
-
-✅ Wazuh Manager Operational
-
-✅ Wazuh Dashboard Operational
-
-✅ Ubuntu Endpoint Enrolled
-
-✅ Security Events Successfully Collected
-
-✅ Threat Hunting Functional
-
-### Next Phase
-
-* Deploy Windows Endpoint
-* Install Wazuh Agent on Windows
-* Configure Sysmon
-* Generate Windows Security Events
-* Investigate Event IDs
-* Perform MITRE ATT&CK Mapping
-* Create Detection Rules
-
-## Learning Outcomes
-
-This lab provides practical experience with enterprise SIEM technologies and security monitoring workflows, helping develop skills relevant to SOC Analyst, Cyber Security Analyst, and Blue Team roles.
-
-
-## 📸 Lab Build Process
-
-The screenshots below highlight the major milestones of building the Wazuh SIEM Home Lab. The complete build log (36 screenshots) is available in the `/screenshots` folder.
+> Building an enterprise-style Security Information and Event Management (SIEM) home lab using Wazuh, Ubuntu Server, Oracle VirtualBox, and Windows 11 to develop practical SOC Analyst and Cyber Security skills.
 
 ---
 
-### 1. Lab Architecture
+# 📖 Overview
 
-Designed the lab environment in Oracle VirtualBox with separate Ubuntu (Wazuh Server) and Windows 11 Target virtual machines.
+This project documents the design, deployment, configuration, and continuous development of a Wazuh SIEM Home Lab built within Oracle VirtualBox.
+
+The primary objective is to gain practical experience with enterprise security monitoring, endpoint visibility, log collection, threat hunting, and security event investigation similar to activities performed by Security Operations Centre (SOC) Analysts and Cyber Security Analysts.
+
+Rather than simply following installation tutorials, this repository documents the complete engineering journey—from initial deployment and troubleshooting to endpoint onboarding, detection engineering, and future threat hunting exercises.
+
+---
+
+# 🎯 Why I Built This Lab
+
+While preparing for Cyber Security Analyst and SOC Analyst roles, I wanted practical experience beyond certifications and theoretical learning.
+
+This project allows me to:
+
+- Deploy an enterprise SIEM platform from scratch.
+- Understand how security telemetry flows between endpoints and a SIEM.
+- Practise troubleshooting real-world infrastructure issues.
+- Develop practical Blue Team and security monitoring skills.
+- Build a documented cyber security portfolio demonstrating hands-on experience.
+
+---
+
+# 🎯 Lab Objectives
+
+- Deploy a fully operational Wazuh SIEM platform.
+- Configure Ubuntu Server as the Wazuh Manager.
+- Build Windows and Ubuntu monitored endpoints.
+- Deploy Wazuh Agents.
+- Configure Sysmon.
+- Generate Windows security events.
+- Perform threat hunting.
+- Map events to the MITRE ATT&CK framework.
+- Create custom detection rules.
+- Document every phase of the deployment.
+
+---
+
+# 🖥️ Lab Environment
+
+| Component | Technology |
+|-----------|------------|
+| Hypervisor | Oracle VirtualBox 7.2.8 |
+| SIEM Platform | Wazuh 4.14.5 |
+| Server | Ubuntu Server 22.04 LTS |
+| Endpoint | Windows 11 Enterprise Evaluation |
+| Additional Endpoint | Ubuntu 22.04 |
+| Network | Oracle VirtualBox Internal Network |
+
+---
+
+# 🏗️ Architecture Diagram
+
+> *(A professional architecture diagram will be added as the project progresses.)*
+
+---
+
+# 🌐 Network Topology
+
+```text
+Windows Host
+        │
+        ▼
+Oracle VirtualBox
+        │
+ ┌──────────────────────────────┐
+ │ Ubuntu Server                │
+ │ ─ Wazuh Manager              │
+ │ ─ Wazuh Indexer              │
+ │ ─ Wazuh Dashboard            │
+ └──────────────────────────────┘
+              ▲
+              │ Wazuh Agent
+              │ Security Logs
+              ▼
+ ┌──────────────────────────────┐
+ │ Windows 11 Enterprise        │
+ │ Target Machine               │
+ └──────────────────────────────┘
+```
+
+---
+
+# 🛠️ Technology Stack
+
+- Oracle VirtualBox
+- Ubuntu Server 22.04 LTS
+- Windows 11 Enterprise Evaluation
+- Wazuh SIEM
+- Wazuh Manager
+- Wazuh Dashboard
+- Wazuh Indexer
+- Linux Administration
+- Windows Administration
+- Threat Hunting
+- Security Monitoring
+
+---
+
+# 🚀 Project Roadmap
+
+| Status | Phase |
+|--------|-------|
+| ✅ | Phase 1 – Wazuh SIEM Deployment |
+| ✅ | Phase 2 – Windows 11 Target Deployment |
+| ⬜ | Phase 3 – Windows Wazuh Agent |
+| ⬜ | Phase 4 – Sysmon Deployment |
+| ⬜ | Phase 5 – Windows Event Collection |
+| ⬜ | Phase 6 – Threat Hunting |
+| ⬜ | Phase 7 – MITRE ATT&CK Mapping |
+| ⬜ | Phase 8 – Custom Detection Rules |
+| ⬜ | Phase 9 – Detection Engineering |
+
+---
+
+# 📸 Lab Build Process
+
+The screenshots below highlight the major milestones of building the Wazuh SIEM Home Lab.
+
+The complete build history (36 screenshots) is available in the **screenshots** folder.
+
+### Lab Architecture
 
 ![Lab Architecture](screenshots/01-lab-architecture.png)
 
 ---
 
-### 2. Ubuntu Server Deployment
+### Ubuntu Server Deployment
 
-Successfully installed Ubuntu Server which hosts the Wazuh Manager, Indexer and Dashboard.
-
-![Ubuntu Server Installed](screenshots/02-ubuntu-server-installed.png)
+![Ubuntu Server](screenshots/02-ubuntu-server-installed.png)
 
 ---
 
-### 3. Hyper-V Troubleshooting
+### Hyper-V Troubleshooting
 
-Diagnosed a VirtualBox boot failure caused by Hyper-V and Virtualization-Based Security (VBS). Used BCDEdit and Windows security settings to disable the Microsoft hypervisor and restore hardware virtualization.
-
-![Disable Hypervisor](screenshots/22-disable-hypervisor-launchtype.png)
+![Hyper-V](screenshots/22-disable-hypervisor-launchtype.png)
 
 ---
 
-### 4. Windows Target Machine Installation
-
-Installed Windows 11 Enterprise Evaluation after increasing the virtual disk size from 50 GB to 80 GB.
+### Windows Installation
 
 ![Windows Installation](screenshots/29-windows-11-installation-progress.png)
 
 ---
 
-### 5. Windows Target Ready
-
-Completed Windows setup and prepared the endpoint for Wazuh agent deployment.
+### Windows Target Machine Ready
 
 ![Windows Desktop](screenshots/32-windows-11-target-vm-ready.png)
 
 ---
 
-### 6. Wazuh Server Installation
+### Wazuh Server Deployment
 
-Completed the Wazuh Server installation on Ubuntu.
-
-![Wazuh Server Installation](screenshots/33-wazuh-server-installation.png)
+![Wazuh Installation](screenshots/33-wazuh-server-installation.png)
 
 ---
 
-### 7. Wazuh Web Login
+### Wazuh Login
 
-Successfully accessed the Wazuh Dashboard through the web interface.
-
-![Wazuh Login](screenshots/35-wazuh-web-login.png)
+![Login](screenshots/35-wazuh-web-login.png)
 
 ---
 
-### 8. Wazuh Dashboard
-
-Validated the deployment by accessing the Wazuh Dashboard and confirming the platform was operational.
+### Wazuh Dashboard
 
 ![Dashboard](screenshots/36-wazuh-dashboard-overview.png)
 
 ---
 
-## 📂 Complete Build Log
+# 🔐 Security Monitoring Completed
 
-The full build process, including all **36 screenshots**, can be viewed in the [`screenshots`](screenshots/) folder.
+### Linux Monitoring
+
+- User creation
+- Group creation
+- sudo monitoring
+- PAM authentication
+- Security Configuration Assessment (SCA)
+
+### Threat Hunting
+
+- Agent investigation
+- Authentication events
+- Rule ID analysis
+- Log analysis
+
+---
+
+# 💡 Skills Demonstrated
+
+## Infrastructure
+
+- Oracle VirtualBox
+- Ubuntu Server Administration
+- Windows 11 Deployment
+
+## SIEM
+
+- Wazuh Deployment
+- Wazuh Agent Management
+- Dashboard Administration
+- Security Monitoring
+
+## Security Operations
+
+- Threat Hunting
+- Log Analysis
+- Security Event Investigation
+- Endpoint Monitoring
+
+## Troubleshooting
+
+- Hyper-V
+- Virtualization-Based Security (VBS)
+- BCDEdit
+- Windows Installation
+- Virtual Disk Expansion
+
+---
+
+# 📚 Lessons Learned
+
+During this project I learned that:
+
+- Hyper-V and VBS can prevent Oracle VirtualBox from using hardware virtualization.
+- Wazuh consists of multiple interconnected services including the Manager, Dashboard, Indexer and Agents.
+- Endpoint onboarding requires successful agent registration before telemetry becomes available.
+- Security monitoring should always be validated using generated security events rather than assumptions.
+- Documenting troubleshooting significantly improves repeatability and future deployments.
+
+---
+
+# 🔮 Future Improvements
+
+- Deploy Windows Wazuh Agent
+- Install Sysmon
+- Configure File Integrity Monitoring
+- Generate Windows Security Events
+- Create Custom Detection Rules
+- Perform MITRE ATT&CK Mapping
+- Develop Threat Hunting Scenarios
+- Add PowerShell Detection
+- Simulate Brute Force Attacks
+- Build Detection Engineering Playbooks
+
+---
+
+# 📂 Repository Structure
+
+```text
+Wazuh-SIEM-Home-Lab
+│
+├── README.md
+├── architecture/
+├── detection-rules/
+├── documentation/
+├── queries/
+└── screenshots/
+```
+
+---
+
+# 🙏 Acknowledgements
+
+This project is part of my ongoing cyber security learning journey and is continuously updated as I develop additional SOC, Blue Team, and Detection Engineering skills.
